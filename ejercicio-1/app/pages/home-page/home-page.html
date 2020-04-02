@@ -1,0 +1,23 @@
+<link rel="import" href="../../../components/cells-template-paper-drawer-panel/cells-template-paper-drawer-panel.html">
+<link rel="import" href="../../../components/cells-page/cells-page.html">
+<link rel="import" href="home-page-styles.html">
+
+<dom-module id="home-page">
+  <template>
+    <style include="home-page-styles"></style>
+    <cells-template-paper-drawer-panel mode="seamed">
+      <div slot="app__header">
+        <div class="header">
+          <h1>Soy el header</h1>
+        </div>
+      </div>
+      <div slot="app__main">
+        <div class="main">
+          <h1>Soy la zona main</h1>
+        </div>
+      </div>
+    </cells-template-paper-drawer-panel>
+  </template>
+
+  <script src="home-page.js"></script>
+</dom-module>
