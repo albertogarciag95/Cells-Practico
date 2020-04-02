@@ -1,0 +1,50 @@
+<link rel="import" href="../../../components/cells-template-paper-drawer-panel/cells-template-paper-drawer-panel.html">
+<link rel="import" href="../../../components/cells-page/cells-page.html">
+<link rel="import" href="../../../components/cells-st-button/cells-st-button.html">
+
+<link rel="import" href="../../elements/data-managers/places-dm/places-dm.html">
+
+<link rel="import" href="home-page-styles.html">
+
+<dom-module id="home-page">
+  <template>
+    <style include="home-page-styles"></style>
+    <cells-template-paper-drawer-panel mode="seamed" header-fixed footer-fixed>
+      <div slot="app__header">
+        <div class="header">
+          <bbva-header-main
+            text="[[title]]"
+            icon-left1="coronita:help"
+            on-header-icon-left1-click="navigateToHelp"
+          ></bbva-header-main>
+        </div>
+      </div>
+      <div slot="app__main">
+        <places-dm id="placesDm"></places-dm>
+
+        <div class="main">
+
+          <template is="dom-if" if="{{isAnyPlace}}">
+            <h2>Me encantaría visitar: </h2>
+            <template is="dom-repeat" items="{{places}}" as="place">
+              <bbva-form-checkbox>[[place]]</bbva-form-checkbox>
+            </template>
+          </template>
+
+          <template is="dom-if" if="{{!isAnyPlace}}">
+            <h2>Ahora mismo no tienes lugares pendientes de visitar</h2>
+          </template>
+        </div>
+      </div>
+      <div slot="app__footer">
+        <div class="footer">
+          <cells-st-button>
+            <button on-click="navigateToAdd">Añadir</button>
+          </cells-st-button>
+        </div>
+      </div>
+    </cells-template-paper-drawer-panel>
+  </template>
+
+  <script src="home-page.js"></script>
+</dom-module>
