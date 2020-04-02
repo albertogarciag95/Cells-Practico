@@ -1,0 +1,26 @@
+<link rel="import" href="../../../components/cells-template-paper-drawer-panel/cells-template-paper-drawer-panel.html">
+<link rel="import" href="../../../components/cells-page/cells-page.html">
+<link rel="import" href="help-page-styles.html">
+
+<dom-module id="help-page">
+  <template>
+    <style include="help-page-styles"></style>
+    <cells-template-paper-drawer-panel mode="seamed" header-fixed animation-type="verticalUp">
+      <div slot="app__header">
+        <div class="header">
+          <bbva-header-main
+            text="[[title]]"
+            icon-left1="coronita:close"
+            on-header-icon-left1-click="backToHome"
+          ></bbva-header-main>
+        </div>
+      </div>
+      <div slot="app__main">
+        <div class="main">
+          <p>[[description]]</p>
+      </div>
+    </cells-template-paper-drawer-panel>
+  </template>
+
+  <script src="help-page.js"></script>
+</dom-module>
