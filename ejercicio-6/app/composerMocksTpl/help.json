@@ -1,0 +1,46 @@
+{
+  "template": {
+    "tag": "cells-template-paper-drawer-panel",
+    "properties": {
+      "mode": "seamed",
+      "zones": [
+        "app__header",
+        "app__main"
+      ],
+      "animationType": "verticalUp",
+      "headerFixed": true
+    }
+  },
+  "components": [
+    {
+      "zone": "app__header",
+      "type": "UI",
+      "tag": "bbva-header-main",
+      "properties": {
+        "text": "Ayuda",
+        "iconLeft1": "coronita:close",
+        "cellsConnections": {
+          "out": {
+            "_navigate_to_home": {
+              "bind": "header-icon-left1-click",
+              "link": {
+                "page": "home"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "zone": "app__main",
+      "type": "UI",
+      "tag": "help-content",
+      "familyPath": "../elements/help-content",
+      "properties": {
+        "description": "Con esta app podrás rápidamente administrar tu lista de lugares pendientes de visitar",
+        "cellsConnections": {}
+      }
+    }
+  ]
+}
+
